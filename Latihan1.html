@@ -17,24 +17,43 @@
       color: #333;
     }
 
-    header, nav, section, footer {
+    header, section, footer {
       padding: 20px;
     }
 
-    nav {
+    .navbar {
       background-color: #4CAF50;
       color: white;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      text-align: center;
+    }
+
+    .navbar-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+    }
+
+    .menu-toggle {
+      font-size: 24px;
+      cursor: pointer;
+      display: none;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      background-color: #4CAF50;
     }
 
     nav a {
       color: white;
       text-decoration: none;
       font-weight: bold;
-      padding: 10px;
-      display: block;
+      padding: 12px 20px;
+      margin: 5px;
+      border-radius: 6px;
+      transition: background-color 0.3s;
     }
 
     nav a:hover {
@@ -111,7 +130,29 @@
       margin-top: 20px;
     }
 
+    /* Responsive & menu toggle */
     @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      nav {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+      }
+
+      nav.show {
+        display: flex;
+      }
+
+      nav a {
+        width: 90%;
+        text-align: center;
+        font-size: 16px;
+      }
+
       .hero, .biodata, .projects {
         grid-template-columns: 1fr;
       }
@@ -120,11 +161,16 @@
 </head>
 <body>
 
-  <nav>
-    <a href="#hero">Header</a>
-    <a href="#about">Biodata</a>
-    <a href="#portfolio">Portofolio</a>
-  </nav>
+  <div class="navbar">
+    <div class="navbar-container">
+            <span class="menu-toggle" onclick="toggleMenu()">☰</span>
+    </div>
+    <nav id="navMenu">
+      <a href="#hero">Header</a>
+      <a href="#about">Biodata</a>
+      <a href="#portfolio">Portofolio</a>
+    </nav>
+  </div>
 
   <section class="hero" id="hero">
     <div>
@@ -174,6 +220,13 @@
   <footer>
     &copy; 2025 Portofolio Saya. All rights reserved.
   </footer>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById('navMenu');
+      nav.classList.toggle('show');
+    }
+  </script>
 
 </body>
 </html>

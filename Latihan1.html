@@ -1,87 +1,179 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-    <title>Contoh Halaman</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portofolio Saya</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #f0f2f5;
+      color: #333;
+    }
+
+    header, nav, section, footer {
+      padding: 20px;
+    }
+
+    nav {
+      background-color: #4CAF50;
+      color: white;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 10px;
+      display: block;
+    }
+
+    nav a:hover {
+      background-color: #45a049;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      background-color: white;
+      padding: 40px;
+      align-items: center;
+    }
+
+    .hero img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .about {
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .biodata {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      padding: 20px;
+      background-color: #fff;
+    }
+
+    .biodata div {
+      background-color: #e0f7fa;
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    .portfolio {
+      padding: 40px 20px;
+      background-color: #ffffff;
+    }
+
+    .portfolio h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .project {
+      background-color: #f9f9f9;
+      border: 1px solid #ccc;
+      padding: 15px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .project img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    footer {
+      background-color: #4CAF50;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .hero, .biodata, .projects {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<!-- Section 1: Menu -->
-<table border="1" width="100%">
-    <tr>
-        <td align="center"><a href="#section1">Header</a></td>
-        <td align="center"><a href="#section3">Biodata</a></td>
-        <td align="center"><a href="#section4">Portofolio</a></td>
-    </tr>
-</table>
+  <nav>
+    <a href="#hero">Header</a>
+    <a href="#about">Biodata</a>
+    <a href="#portfolio">Portofolio</a>
+  </nav>
 
-<!-- Section 2: Judul di kiri, gambar di kanan -->
-<table border="1" width="100%" id="section2" cellpadding="10">
-    <tr>
-        <td width="50%" valign="top" align="left">
-            <h2>Selamat Datang di Website Saya</h2>
-            <p>Ini adalah contoh header dua kolom.</p>
-            <p>Kolom kiri menampilkan teks deskriptif yang menjelaskan isi dari website ini.</p>
-            <p><a href="#section4"><button>Pelajari lebih lanjut</button></a></p>
-        </td>
-        <td width="50%" align="center" valign="middle">
-            <img src="https://via.placeholder.com/300x200" alt="Gambar" />
-        </td>
-    </tr>
-</table>
+  <section class="hero" id="hero">
+    <div>
+      <h1>Selamat Datang di Website Saya 🚀</h1>
+      <p>Ini adalah contoh halaman portofolio menggunakan HTML + CSS Grid Layout.</p>
+      <p>Bagian ini menggunakan dua kolom responsif, dengan teks di kiri dan gambar di kanan.</p>
+      <a href="#portfolio"><button>Pelajari lebih lanjut</button></a>
+    </div>
+    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f" alt="Gambar Hero">
+  </section>
 
-<!-- Section 3: Biodata dengan 6 box -->
-<table border="0" width="100%" id="section3">
-    <tr>
-        <td align="center" colspan="3">
-            <h2>About Me</h2>
-            <p><em>A Brief Introduction about myself</em></p>
-        </td>
-    </tr>
-</table>
-<br>
+  <section class="about" id="about">
+    <h2>About Me</h2>
+    <p><em>A Brief Introduction about myself</em></p>
+  </section>
 
-<table border="1" width="100%" cellpadding="10">
-    <tr align="center">
-        <th>Full Name</th>
-        <th>Education</th>
-        <th>Pekerjaan</th>
-    </tr>
-    <tr align="center">
-        <th>Contact</th>
-        <th>Hobi</th>
-        <th>Alamat</th>
-    </tr>
-    </table>
+  <section class="biodata">
+    <div><strong>Full Name:</strong> John Doe</div>
+    <div><strong>Education:</strong> S1 Informatika</div>
+    <div><strong>Pekerjaan:</strong> Web Developer</div>
+    <div><strong>Contact:</strong> johndoe@example.com</div>
+    <div><strong>Hobi:</strong> Coding, Musik</div>
+    <div><strong>Alamat:</strong> Jakarta, Indonesia</div>
+  </section>
 
-<!-- Section 4: Portofolio -->
-<table border="0" width="100%" id="section4">
-    <tr>
-        <td align="center">
-            <h2>Portofolio</h2>
-        </td>
-    </tr>
-</table>
+  <section class="portfolio" id="portfolio">
+    <h2>Portofolio</h2>
+    <div class="projects">
+      <div class="project">
+        <img src="https://images.unsplash.com/photo-1611078489935-cb9a3aa8b394" alt="Aplikasi Kasir">
+        <h3>Aplikasi Kasir</h3>
+        <p>Aplikasi desktop untuk toko ritel dengan fitur transaksi, stok, dan laporan.</p>
+      </div>
+      <div class="project">
+        <img src="https://images.unsplash.com/photo-1581091226825-1c73d1f1d1c4" alt="Website Profil">
+        <h3>Website Profil</h3>
+        <p>Website pribadi sederhana menggunakan HTML, menampilkan informasi diri dan portofolio.</p>
+      </div>
+      <div class="project">
+        <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0" alt="Project Tambahan">
+        <h3>Project Tambahan</h3>
+        <p>Contoh proyek lain untuk melengkapi variasi portofolio Anda.</p>
+      </div>
+    </div>
+  </section>
 
-<table border="1" width="100%" cellpadding="15">
-    <tr>
-        <td align="center" valign="top" width="33%">
-            <img src="https://via.placeholder.com/350x200" alt="Aplikasi Kasir" width="350" height="200"><br><br>
-            <strong>Aplikasi Kasir</strong><br>
-            <p align="left">Aplikasi desktop untuk toko ritel dengan fitur transaksi, stok, dan laporan.</p>
-        </td>
-        <td align="center" valign="top" width="33%">
-            <img src="https://via.placeholder.com/350x200" alt="Website Profil" width="350" height="200"><br><br>
-            <strong>Website Profil</strong><br>
-            <p align="left">Website pribadi sederhana menggunakan HTML, menampilkan informasi diri dan portofolio.</p>
-        </td>
-        <td align="center" valign="top" width="33%">
-            <img src="https://via.placeholder.com/350x200" alt="Project Tambahan" width="350" height="200"><br><br>
-            <strong>Project Tambahan</strong><br>
-            <p align="left">Contoh proyek lain untuk melengkapi tampilan dan variasi portofolio Anda.</p>
-        </td>
-    </tr>
-</table>
-
+  <footer>
+    &copy; 2025 Portofolio Saya. All rights reserved.
+  </footer>
 
 </body>
 </html>
